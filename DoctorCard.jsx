@@ -1,7 +1,7 @@
 function DoctorCard({ doctor }) {
   return (
     <div className="bg-white p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition">
-      
+
       <img
         src={doctor.image}
         alt={doctor.name}
