@@ -28,12 +28,6 @@ function DoctorCard({ doctor }) {
         {doctor.availability}
       </p>
 
-      <button
-        onClick={() => setShowSlots(!showSlots)}
-        className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
-      >
-        See Available Slots
-      </button>
 
       <input
         type="date"
@@ -48,9 +42,15 @@ function DoctorCard({ doctor }) {
         className="border p-2 rounded mt-4 w-full"
       />
 
-      
-        {
-          showSlots && selectedDate && (
+      <button
+        onClick={() => setShowSlots(!showSlots)}
+        className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+      >
+        See Available Slots
+      </button>
+
+      {
+        showSlots && selectedDate && (
           <div className="mt-4 text-sm">
             <p>Available slots for {selectedDate}</p>
 
@@ -60,7 +60,7 @@ function DoctorCard({ doctor }) {
           </div>
         )
       }
-      
+
       <div className="mt-4 text-left">
         <h3 className="font-semibold mb-2">Consultation Type</h3>
 

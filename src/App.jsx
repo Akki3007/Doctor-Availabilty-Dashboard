@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DoctorCard from "./components/DoctorCard";
+import DoctorDashboard from "./components/DoctorDashboard";
 
 function App() {
 
@@ -45,50 +46,8 @@ function App() {
     },
   ];
 
-  const [selectedSpecialization, setSelectedSpecialization] =
-    useState("All");
-
-  const filteredDoctors =
-    selectedSpecialization === "All"
-      ? doctors
-      : doctors.filter(
-        (doctor) =>
-          doctor.specialization === selectedSpecialization
-      );
-
-
-  return (
-    <div className="min-h-screen bg-gray-100 p-10">
-
-      <h1 className="text-4xl font-bold text-center mb-10">
-        Our Doctors
-      </h1>
-      <div className="flex justify-center mb-10">
-        <select
-          className="p-3 rounded-lg border"
-          value={selectedSpecialization}
-          onChange={(e) =>
-            setSelectedSpecialization(e.target.value)
-          }
-        >
-          <option>All</option>
-          <option>Cardiologist</option>
-          <option>Dermatologist</option>
-          <option>Neurologist</option>
-          <option>Pediatrician</option>
-        </select>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-        {filteredDoctors.map((doctor) => (
-          <DoctorCard key={doctor.id} doctor={doctor} />
-        ))}
-
-      </div>
-
-    </div>
-  );
+  return <DoctorDashboard doctors={doctors} />;
 }
 
 export default App;
+
