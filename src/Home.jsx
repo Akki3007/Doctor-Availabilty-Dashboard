@@ -6,7 +6,7 @@ function Home() {
 
 
     return (
-  <>
+        <>
             <nav className="flex justify-between items-center bg-blue-600 text-white p-4">
                 <h1 className="text-2xl font-bold">
                     Healthcare Dashboard
@@ -24,13 +24,25 @@ function Home() {
                     Healthcare Dashboard
                 </h1>
 
-                <img
-                    src={hero}
-                    alt="Healthcare"
-                    className="w-[500px] mx-auto rounded-lg"
-                />
+                <div className="relative w-[500px] mx-auto">
 
-                <p className="mt-4 text-gray-600">
+                    <img
+                        src={hero}
+                        alt="Healthcare"
+                        className="w-full rounded-lg grayscale brightness-50"
+                    />
+
+                   <div className="absolute top-[62%] left-[50%] transform -translate-x-1/2 -translate-y-2/2">
+                        <div className="text-green-600 text-[500px] font-bold opacity-90 leading-none">
+                            +
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <p className="mt-4 !text-black font-medium">
                     Check doctor availability and consultation slots
                 </p>
 
@@ -40,9 +52,9 @@ function Home() {
                 >
                     Check Doctor Availability
                 </button>
-            </div>
-            </>
-            );
+            </div >
+        </>
+    );
 }
 
-            export default Home;
+export default Home;

@@ -1,6 +1,6 @@
-import { useState } from "react";
-import DoctorCard from "./components/DoctorCard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DoctorDashboard from "./components/DoctorDashboard";
+import Home from "./Home";
 
 function App() {
 
@@ -46,7 +46,18 @@ function App() {
     },
   ];
 
-  return <DoctorDashboard doctors={doctors} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route
+          path="/doctors"
+          element={<DoctorDashboard doctors={doctors} />}
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
